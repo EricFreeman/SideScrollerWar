@@ -18,6 +18,8 @@ namespace Assets.Scripts
 
         public bool IsPlayer;
 
+        public SpriteRenderer SpriteRenderer;
+
         void Update()
         {
             transform.Translate(Speed * Time.deltaTime * (IsPlayer ? 1 : -1), 0, 0);
