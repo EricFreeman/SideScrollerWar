@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public List<Sprite> DeathAnimations;
 
         public float Speed = 1f;
-        public float AttackDelay = 1000f;
+        public int AttackDelay = 1000;
 
         public int Health = 10;
         public int Attack = 1;
