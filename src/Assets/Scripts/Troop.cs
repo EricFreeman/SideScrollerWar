@@ -16,6 +16,8 @@ namespace Assets.Scripts
         public int Health = 10;
         public int Attack = 1;
 
+        public float Cost = 100;
+
         public bool IsPlayer;
 
         public SpriteRenderer SpriteRenderer;
