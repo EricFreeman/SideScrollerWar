@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Models;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -24,7 +25,20 @@ namespace Assets.Scripts
 
         void Update()
         {
-            transform.Translate(Speed * Time.deltaTime * (IsPlayer ? 1 : -1), 0, 0);
+            if (CanMove())
+                MoveTroop();
+        }
+
+        private void MoveTroop()
+        {
+            transform.Translate(Speed*Time.deltaTime*(IsPlayer ? 1 : -1), 0, 0);
+        }
+
+        private bool CanMove()
+        {
+            var isWithinLevel = (IsPlayer && transform.position.x < GameContext.LevelSize) || (!IsPlayer && transform.position.x > 0);
+
+            return isWithinLevel;
         }
     }
 }
