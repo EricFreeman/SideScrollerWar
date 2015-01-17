@@ -24,7 +24,7 @@ namespace Assets.Scripts
                 var y = Random.Range(0f, .7f);
                 troop.transform.Translate(1, y, 0);
 
-                troop.SpriteRenderer.sortingOrder = 70 - (int) (y*100f);
+                troop.SpriteRenderer.sortingOrder = 70 - (int)(y * 100f);
                 GameContext.Money -= troop.Cost;
             }
             else

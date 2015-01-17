@@ -31,12 +31,12 @@ namespace Assets.Scripts
 
         private void MoveTroop()
         {
-            transform.Translate(Speed*Time.deltaTime*(IsPlayer ? 1 : -1), 0, 0);
+            transform.Translate(Speed * Time.deltaTime * (IsPlayer ? 1 : -1), 0, 0);
         }
 
         private bool CanMove()
         {
-            var isWithinLevel = (IsPlayer && transform.position.x < GameContext.LevelSize) || (!IsPlayer && transform.position.x > 0);
+            var isWithinLevel = (IsPlayer && transform.position.x < GameContext.LevelSize - GameContext.BaseSize) || (!IsPlayer && transform.position.x > GameContext.BaseSize);
 
             return isWithinLevel;
         }
